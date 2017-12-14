@@ -1,0 +1,27 @@
+
+/* Class = "UILabel"; text = "00:00:000"; ObjectID = "2Go-a3-41Z"; */
+"2Go-a3-41Z.text" = "00:00:000";
+
+/* Class = "UILabel"; text = "00:00:000"; ObjectID = "Hr3-Gx-9ck"; */
+"Hr3-Gx-9ck.text" = "00:00:000";
+
+/* Class = "UIButton"; normalTitle = "OK"; ObjectID = "IkF-5K-rBI"; */
+"IkF-5K-rBI.normalTitle" = "OK";
+
+/* Class = "UILabel"; text = "Leaderboards"; ObjectID = "OZP-6z-Byu"; */
+"OZP-6z-Byu.text" = "리더 보드";
+
+/* Class = "UILabel"; text = "WELCOME"; ObjectID = "Qwn-He-5og"; */
+"Qwn-He-5og.text" = "환영";
+
+/* Class = "UIButton"; normalTitle = "GO"; ObjectID = "S8o-jb-Zup"; */
+"S8o-jb-Zup.normalTitle" = "GO";
+
+/* Class = "UITextField"; placeholder = "Please enter your nickname"; ObjectID = "i9i-pF-6DE"; */
+"i9i-pF-6DE.placeholder" = "닉네임을 입력하십시오.";
+
+/* Class = "UILabel"; text = "Please enter your nickname"; ObjectID = "zHB-H1-prZ"; */
+"zHB-H1-prZ.text" = "닉네임을 입력하십시오.";
+
+/* Class = "UILabel"; text = "Tap to start"; ObjectID = "zLe-o2-Ofb"; */
+"zLe-o2-Ofb.text" = "시작을 클릭";

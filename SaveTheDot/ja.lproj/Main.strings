@@ -1,0 +1,27 @@
+
+/* Class = "UILabel"; text = "00:00:000"; ObjectID = "2Go-a3-41Z"; */
+"2Go-a3-41Z.text" = "00:00:000";
+
+/* Class = "UILabel"; text = "00:00:000"; ObjectID = "Hr3-Gx-9ck"; */
+"Hr3-Gx-9ck.text" = "00:00:000";
+
+/* Class = "UIButton"; normalTitle = "OK"; ObjectID = "IkF-5K-rBI"; */
+"IkF-5K-rBI.normalTitle" = "OK";
+
+/* Class = "UILabel"; text = "Leaderboards"; ObjectID = "OZP-6z-Byu"; */
+"OZP-6z-Byu.text" = "リーダーボード";
+
+/* Class = "UILabel"; text = "WELCOME"; ObjectID = "Qwn-He-5og"; */
+"Qwn-He-5og.text" = "ようこそ";
+
+/* Class = "UIButton"; normalTitle = "GO"; ObjectID = "S8o-jb-Zup"; */
+"S8o-jb-Zup.normalTitle" = "GO";
+
+/* Class = "UITextField"; placeholder = "Please enter your nickname"; ObjectID = "i9i-pF-6DE"; */
+"i9i-pF-6DE.placeholder" = "ニックネームを入力してください";
+
+/* Class = "UILabel"; text = "Please enter your nickname"; ObjectID = "zHB-H1-prZ"; */
+"zHB-H1-prZ.text" = "ニックネームを入力してください";
+
+/* Class = "UILabel"; text = "Tap to start"; ObjectID = "zLe-o2-Ofb"; */
+"zLe-o2-Ofb.text" = "クリックして開始";

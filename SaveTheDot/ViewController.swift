@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import AVOSCloudIM
 
 class ViewController: UIViewController {
     
@@ -137,6 +138,8 @@ fileprivate extension ViewController {
         playerView.addSubview(imageView)
         
         view.addSubview(playerView)
+        
+        
     }
     
     func startEnemyTimer() {
@@ -271,18 +274,32 @@ fileprivate extension ViewController {
        //比较分数
         let beforH = self.readWithNSUserDefaults()
 
+
         if (elapsedTime > beforH){
             //计入本地
             self.saveWithNSUserDefaults(time :elapsedTime)
         }
         
         let (title, message) = getGameOverTitleAndMessage()
-        let alert = UIAlertController(title: "Game Over", message: message, preferredStyle: .alert)
+        let alert = UIAlertController(title: NSLocalizedString("GameOver", comment: "default"), message: message, preferredStyle: .alert)
         let action = UIAlertAction(title: title, style: .default,
                                    handler: { _ in
                                     self.prepareGame()
         }
         )
+        let action2 = UIAlertAction(title: NSLocalizedString("ShowLeaderboards", comment: "default"), style: .default,
+                                   handler: { _ in
+                                    self.prepareGame()
+                                    
+                                    let story : UIStoryboard = UIStoryboard.init(name: "Main", bundle: nil)
+                                    
+                                    let leaderBoardVC = story.instantiateViewController(withIdentifier: "leaderboardvc")
+                                    
+                                    self.present(leaderBoardVC, animated: true, completion: nil)
+        }
+        )
+
+        alert.addAction(action2)
         alert.addAction(action)
         self.present(alert, animated: true, completion: nil)
     }
@@ -290,11 +307,11 @@ fileprivate extension ViewController {
     func getGameOverTitleAndMessage() -> (String, String) {
         let elapsedSeconds = Int(elapsedTime) % 60
         switch elapsedSeconds {
-        case 0..<10: return ("I try again 😂", "Seriously, you need more practice 😒")
-        case 10..<30: return ("Another go 😉", "No bad, you are getting there 😁")
-        case 30..<60: return ("Play again 😉", "Very good 👍")
+        case 0..<10: return (NSLocalizedString("Action",  comment:"default" ), NSLocalizedString("Tip1", comment:"default"))
+        case 10..<30: return (NSLocalizedString("Action", comment:"default"), NSLocalizedString("Tip2", comment:"default"))
+        case 30..<60: return (NSLocalizedString("Action", comment:"default"), NSLocalizedString("Tip3", comment:"default"))
         default:
-            return ("Off cause 😚", "Legend, olympic player .")
+            return (NSLocalizedString("Action", comment:"default"), NSLocalizedString("Tip1", comment:"default"))
         }
     }
     
@@ -305,6 +322,15 @@ fileprivate extension ViewController {
         defaults.set(time, forKey: "highest");
         // 3、同步数据
         defaults.synchronize();
+        
+        let nickName = defaults.double(forKey:"nickname")
+        
+        let todo : AVObject = AVObject.init(className: "number")
+        todo.setObject(nickName, forKey: "name1")
+        todo.setObject((time :elapsedTime), forKey: "grade1")
+        
+        todo.save()
+
     }
     func readWithNSUserDefaults() -> Double{
         let defaults = UserDefaults.standard;

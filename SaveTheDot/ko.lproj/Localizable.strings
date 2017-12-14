@@ -1,0 +1,22 @@
+/* 
+  Localizable.strings
+  SaveTheDot
+
+  Created by 改车吧 on 2017/12/13.
+  Copyright © 2017年 Jake Lin. All rights reserved.
+*/
+"GameOver" = "Game Over"
+
+"ShowLeaderboards" = "Show Leaderboards";
+
+"Action" = "Again";
+
+"Tip1" = "지속적인 노력";
+"Tip2" = "아주 좋아.";
+"Tip3" = "정말 놀라운";
+"Tip4" = "극도로 완벽한";
+
+
+
+
+
