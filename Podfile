@@ -10,6 +10,7 @@ target 'SaveTheDot' do
         pod 'AVOSCloud'               # 数据存储、短信、云引擎调用等基础服务模块
         pod 'AVOSCloudIM'             # 实时通信模块
 
+           pod 'SVProgressHUD', '~> 2.2.2'
    pod 'LeanCloud', '~> 10.1.0'
   # Pods for SaveTheDot
 

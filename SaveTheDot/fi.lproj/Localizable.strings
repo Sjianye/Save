@@ -5,9 +5,9 @@
   Created by 改车吧 on 2017/12/13.
   Copyright © 2017年 Jake Lin. All rights reserved.
 */
-"GameOver" = "Game Over"
+"GameOver" = "Peli ohi";
 
-"ShowLeaderboards" = "Show Leaderboards";
+"ShowLeaderboards" = "Näytä tulostaulukko";
 
 "Action" = "Pelaa uudestaan";
 
@@ -17,6 +17,7 @@
 "Tip4" = "Erittäin täydellinen";
 
 
+"netWorkError" = "Verkon poikkeavuudet";
 
 
 

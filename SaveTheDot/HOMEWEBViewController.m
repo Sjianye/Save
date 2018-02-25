@@ -22,6 +22,7 @@
     
     
 }
+
 - (void)setUrlStr:(NSString *)urlStr{
     _urlStr = urlStr;
     

@@ -5,9 +5,9 @@
   Created by 改车吧 on 2017/12/13.
   Copyright © 2017年 Jake Lin. All rights reserved.
 */
-"GameOver" = "Game Over"
+"GameOver" = "Spiel ist aus";
 
-"ShowLeaderboards" = "Show Leaderboards";
+"ShowLeaderboards" = "Rangliste anzeigen";
 
 "Action" = "Nochmal spielen";
 
@@ -17,6 +17,7 @@
 "Tip4" = "extrem perfekt";
 
 
+"netWorkError" = "Netzwerkanomalien";
 
 
 

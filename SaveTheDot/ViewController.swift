@@ -8,6 +8,7 @@
 
 import UIKit
 import AVOSCloudIM
+import AVFoundation
 
 class ViewController: UIViewController {
     
@@ -25,12 +26,13 @@ class ViewController: UIViewController {
         case gameOver
     }
     
+    
     // MARK: - Constants
     fileprivate let radius: CGFloat = 10
     fileprivate let playerAnimationDuration = 5.0
     fileprivate let enemySpeed: CGFloat = 60 // points per second
-    fileprivate let colors = [#colorLiteral(red: 0.08235294118, green: 0.6980392157, blue: 0.5411764706, alpha: 1), #colorLiteral(red: 0.07058823529, green: 0.5725490196, blue: 0.4470588235, alpha: 1), #colorLiteral(red: 0.9333333333, green: 0.7333333333, blue: 0, alpha: 1), #colorLiteral(red: 0.9411764706, green: 0.5450980392, blue: 0, alpha: 1), #colorLiteral(red: 0.1411764706, green: 0.7803921569, blue: 0.3529411765, alpha: 1), #colorLiteral(red: 0.1176470588, green: 0.6431372549, blue: 0.2941176471, alpha: 1), #colorLiteral(red: 0.8784313725, green: 0.4156862745, blue: 0.03921568627, alpha: 1), #colorLiteral(red: 0.7882352941, green: 0.2470588235, blue: 0, alpha: 1), #colorLiteral(red: 0.1490196078, green: 0.5098039216, blue: 0.8352941176, alpha: 1), #colorLiteral(red: 0.1137254902, green: 0.4156862745, blue: 0.6784313725, alpha: 1), #colorLiteral(red: 0.8823529412, green: 0.2, blue: 0.1607843137, alpha: 1), #colorLiteral(red: 0.7019607843, green: 0.1411764706, blue: 0.1098039216, alpha: 1), #colorLiteral(red: 0.537254902, green: 0.2352941176, blue: 0.662745098, alpha: 1), #colorLiteral(red: 0.4823529412, green: 0.1490196078, blue: 0.6235294118, alpha: 1), #colorLiteral(red: 0.6862745098, green: 0.7137254902, blue: 0.7333333333, alpha: 1), #colorLiteral(red: 0.1529411765, green: 0.2196078431, blue: 0.2980392157, alpha: 1), #colorLiteral(red: 0.1294117647, green: 0.1843137255, blue: 0.2470588235, alpha: 1), #colorLiteral(red: 0.5137254902, green: 0.5843137255, blue: 0.5843137255, alpha: 1), #colorLiteral(red: 0.4235294118, green: 0.4745098039, blue: 0.4784313725, alpha: 1)]
-    
+    fileprivate let colors = [#colorLiteral(red: 0.08235294118, green: 0.6980392157, blue: 0.5411764706, alpha: 1), #colorLiteral(red: 0.07058823529, green: 0.5725490196, blue: 0.4470588235, alpha: 1), #colorLiteral(red: 0.9333333333, green: 0.7333333333, blue: 0, alpha: 1), #colorLiteral(red: 0.9411764706, green: 0.5450980392, blue: 0, alpha: 1), #colorLiteral(red: 0.1411764706, green: 0.7803921569, blue: 0.3529411765, alpha: 1), #colorLiteral(red: 0.1176470588, green: 0.6431372549, blue: 0.2941176471, alpha: 1), #colorLiteral(red: 0.8784313725, green: 0.4156862745, blue: 0.03921568627, alpha: 1), #colorLiteral(red: 0.7882352941, green: 0.2470588235, blue: 0, alpha: 1), #colorLiteral(red: 0.721568644, green: 0.8862745166, blue: 0.5921568871, alpha: 1), #colorLiteral(red: 0.2588235438, green: 0.7568627596, blue: 0.9686274529, alpha: 1), #colorLiteral(red: 0.8823529412, green: 0.2, blue: 0.1607843137, alpha: 1), #colorLiteral(red: 0.7019607843, green: 0.1411764706, blue: 0.1098039216, alpha: 1), #colorLiteral(red: 0.5568627715, green: 0.3529411852, blue: 0.9686274529, alpha: 1), #colorLiteral(red: 0.9764705896, green: 0.850980401, blue: 0.5490196347, alpha: 1), #colorLiteral(red: 0.6862745098, green: 0.7137254902, blue: 0.7333333333, alpha: 1), #colorLiteral(red: 0.721568644, green: 0.8862745166, blue: 0.5921568871, alpha: 1), #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1), #colorLiteral(red: 0.9568627477, green: 0.6588235497, blue: 0.5450980663, alpha: 1), #colorLiteral(red: 0.521568656, green: 0.1098039225, blue: 0.05098039284, alpha: 1)]
+
     // MARK: - fileprivate
     fileprivate var playerView = UIView(frame: .zero)
     fileprivate var playerAnimator: UIViewPropertyAnimator?
@@ -50,15 +52,35 @@ class ViewController: UIViewController {
     @IBOutlet weak var startLabel: UILabel!
     @IBOutlet weak var Highest: UILabel!
     
+    fileprivate var player:AVAudioPlayer?
+    
+    fileprivate var biu:AVAudioPlayer?
+    
     // MARK: - Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
         setupPlayerView()
         prepareGame()
+        
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         // First touch to start the game
+        
+        let path = Bundle.main.path(forResource:"bg_touch", ofType:"mp3")
+        let url = URL.init(fileURLWithPath: path!)
+                
+        do{
+            biu = try AVAudioPlayer.init(contentsOf:url)
+        }catch{
+            biu=nil;
+            print("error")
+        }
+        biu?.play()
+
+
+        
+        
         if gameState == .ready {
             startGame()
         }
@@ -131,7 +153,7 @@ fileprivate extension ViewController {
         playerView.layer.cornerRadius = radius
         //    playerView.backgroundColor = #colorLiteral(red: 0.7098039216, green: 0.4549019608, blue: 0.9607843137, alpha: 1)
         
-        let imageView = UIImageView(image:UIImage(named:"D"))
+        let imageView = UIImageView(image:UIImage(named:"5"))
         
         let frame = CGRect(x: 0, y: 0, width: radius * 2, height: radius * 2)
         imageView.frame = frame
@@ -177,6 +199,8 @@ fileprivate extension ViewController {
     }
     
     func gameOver() {
+        player?.stop()
+        player = nil
         stopGame()
         displayGameOverAlert()
     }
@@ -199,6 +223,18 @@ fileprivate extension ViewController {
     }
     
     func startGame() {
+        
+        let path = Bundle.main.path(forResource:"bgMusic", ofType:"mp3")
+        let url = URL.init(fileURLWithPath: path!)
+        
+        do{
+            player = try AVAudioPlayer.init(contentsOf:url)
+        }catch{
+            player=nil;
+            print("error")
+        }
+        player?.play()
+        
         startEnemyTimer()
         startDisplayLink()
         startLabel.isHidden = true
@@ -261,6 +297,10 @@ fileprivate extension ViewController {
     func moveEnemies(to touchLocation: CGPoint) {
         for (index, enemyView) in enemyViews.enumerated() {
             let duration = getEnemyDuration(enemyView: enemyView)
+            if enemyAnimators.count == 0 {
+                return
+                
+            }
             enemyAnimators[index] = UIViewPropertyAnimator(duration: duration,
                                                            curve: .linear,
                                                            animations: {
@@ -271,6 +311,23 @@ fileprivate extension ViewController {
     }
     
     func displayGameOverAlert() {
+        
+        
+        let path = Bundle.main.path(forResource:"bgGameOver", ofType:"mp3")
+        let url = URL.init(fileURLWithPath: path!)
+        
+
+        do{
+            biu = try AVAudioPlayer.init(contentsOf:url)
+        }catch{
+            biu=nil;
+            print("error")
+        }
+        biu?.play()
+        
+
+        
+        
        //比较分数
         let beforH = self.readWithNSUserDefaults()
 
@@ -323,7 +380,7 @@ fileprivate extension ViewController {
         // 3、同步数据
         defaults.synchronize();
         
-        let nickName = defaults.double(forKey:"nickname")
+        let nickName = defaults.string(forKey:"nickname")
         
         let todo : AVObject = AVObject.init(className: "number")
         todo.setObject(nickName, forKey: "name1")

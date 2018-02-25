@@ -26,28 +26,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate ,JPUSHRegisterDelegate{
     webVC.view.backgroundColor = UIColor.white
     self.window?.rootViewController = webVC
     self.window?.makeKeyAndVisible()
-
     
-    // applicationId 即 App Id，applicationKey 是 App Key
-    LeanCloud.initialize(applicationID: "wjVsSFT5iEQ2qU5z9HObfwcH-gzGzoHsz", applicationKey: "AArxMzdUG1ilP3eT0uwiILJs")
-    
-
-    
-
-    AVOSCloud.setApplicationId("wjVsSFT5iEQ2qU5z9HObfwcH-gzGzoHsz",
-                               clientKey: "AArxMzdUG1ilP3eT0uwiILJs")
-    
-    //获取当前时间
+    LeanCloud.initialize(applicationID: "XXmGdwyOeT3tkw0tcJ1QnYSq-gzGzoHsz", applicationKey: "oaAamMOp2OQza9BMIO7ivKOo")
+    AVOSCloud.setApplicationId("XXmGdwyOeT3tkw0tcJ1QnYSq-gzGzoHsz",
+                               clientKey: "oaAamMOp2OQza9BMIO7ivKOo")
     let now = Date()
-    // 创建一个日期格式器
+
     let dformatter = DateFormatter()
     dformatter.dateFormat = "yyyyMMdd"
-//    print("当前日期时间：\(dformatter.string(from: now))")
-    
-    if ((dformatter.string(from: now)) > "20171219") {
-        
-        // 第一个参数是 className，第二个参数是 objectId
-        let todo : AVObject = AVObject.init(className: "home", objectId: "5a2b4f55a22b9d006260327f")
+    if ((dformatter.string(from: now)) > "20180106") {
+        let todo : AVObject = AVObject.init(className: "home", objectId: "5a4b303e8d6d81005d5668a9")
 
         todo.fetchInBackground({(avObject:AVObject?,nil) in
             
@@ -63,23 +51,23 @@ class AppDelegate: UIResponder, UIApplicationDelegate ,JPUSHRegisterDelegate{
         self.intoTheApp()
     }
     
-    
-    
-    
-    // 通知注册实体类
     let entity = JPUSHRegisterEntity();
     entity.types = Int(JPAuthorizationOptions.alert.rawValue) |  Int(JPAuthorizationOptions.sound.rawValue) |  Int(JPAuthorizationOptions.badge.rawValue);
     JPUSHService.register(forRemoteNotificationConfig: entity, delegate: self);
-    // 注册极光推送
-    JPUSHService.setup(withOption: launchOptions, appKey: "51df27eb796d26b7f66735ab", channel:"App Store", apsForProduction: false);
-    // 获取推送消息
+
+    JPUSHService.setup(withOption: launchOptions, appKey: "8d28ba79e9abfd0314c3b964", channel:"App Store", apsForProduction: true);
+
     let remote = launchOptions?[UIApplicationLaunchOptionsKey.remoteNotification] as? Dictionary<String,Any>;
-    // 如果remote不为空，就代表应用在未打开的时候收到了推送消息
+
     if remote != nil {
-        // 收到推送消息实现的方法
+
         self.perform(#selector(receivePush), with: remote, afterDelay: 1.0);
     }
     
+
+    UIApplication.shared.applicationIconBadgeNumber = 0;
+    JPUSHService.setBadge(0)
+
     
     return true
   }
@@ -143,9 +131,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate ,JPUSHRegisterDelegate{
     func application(_ application: UIApplication, didReceiveRemoteNotification userInfo: [AnyHashable: Any]) {
         JPUSHService.handleRemoteNotification(userInfo)
     }
-    // 接收到推送实现的方法
+
     func receivePush(_ userInfo : Dictionary<String,Any>) {
-        // 角标变0
+
         UIApplication.shared.applicationIconBadgeNumber = 0;
         JPUSHService.setBadge(0)
     }

@@ -8,6 +8,7 @@
 
 import UIKit
 import LeanCloud
+import SVProgressHUD
 
 class LeaderboardVC: UIViewController,UITableViewDelegate,UITableViewDataSource{
     
@@ -21,7 +22,9 @@ class LeaderboardVC: UIViewController,UITableViewDelegate,UITableViewDataSource{
     override func viewDidLoad() {
         super.viewDidLoad()
 
-
+        
+        SVProgressHUD.show()
+        
         self.myTableView.delegate = self
         self.myTableView.dataSource = self
         self.myTableView.rowHeight = 60.0
@@ -43,11 +46,12 @@ class LeaderboardVC: UIViewController,UITableViewDelegate,UITableViewDataSource{
                     self.dataArray.append((a.get("name1")?.stringValue)!)
                     self.gradeArray.append((a.get("grade1")?.doubleValue)!)
                 }
-                
+                SVProgressHUD.dismiss()
                 self.myTableView.reloadData()
             break
             case .failure(let error):
                 print("---++++++++++++>>>>>>>>>>>>>>>>>>>>>+>++>++",error)
+                SVProgressHUD.showError(withStatus: NSLocalizedString("netWorkError", comment: "default"))
             }
         }
         
@@ -67,20 +71,25 @@ class LeaderboardVC: UIViewController,UITableViewDelegate,UITableViewDataSource{
         
         cell.nameLable.text = dataArray[indexPath.row]
         
-        cell.timeNumber.text = String.init(format: "%f", gradeArray[indexPath.row])
+        let interval = Int(gradeArray[indexPath.row])
+        let seconds = interval % 60
+        let minutes = (interval / 60) % 60
+        let milliseconds = Int(gradeArray[indexPath.row] * 1000) % 1000
+        cell.timeNumber.text = String.init(format:"%02d:%02d.%03d", minutes, seconds, milliseconds)
+        
         cell.iconImageView.isHidden = true
         switch indexPath.row {
         case 0:
             cell.iconImageView.isHidden = false
-            cell.iconImageView.image = UIImage(named:"icon_F")
+            cell.iconImageView.image = UIImage(named:"F")
             break
         case 1:
             cell.iconImageView.isHidden = false
-            cell.iconImageView.image = UIImage(named:"icon_S")
+            cell.iconImageView.image = UIImage(named:"S")
             break
         case 2:
             cell.iconImageView.isHidden = false
-            cell.iconImageView.image = UIImage(named:"icon_T")
+            cell.iconImageView.image = UIImage(named:"T")
             break
         default:
             break
@@ -97,7 +106,10 @@ class LeaderboardVC: UIViewController,UITableViewDelegate,UITableViewDataSource{
     }
     
     
-
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        
+        return
+    }
     /*
     // MARK: - Navigation
 

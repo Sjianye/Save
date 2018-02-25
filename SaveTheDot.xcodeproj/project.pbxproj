@@ -12,11 +12,15 @@
 		1F9663C31FDFC68F00A1DA00 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1F9862EC1FDE89D200F3E1D3 /* Assets.xcassets */; };
 		1F9663C51FDFCCBA00A1DA00 /* AxisStd-UltraLight.otf in Sources */ = {isa = PBXBuildFile; fileRef = 1F9FA5A71FDBD06D004AA9F3 /* AxisStd-UltraLight.otf */; };
 		1F9663C61FDFCCC000A1DA00 /* AxisStd-UltraLight.otf in Resources */ = {isa = PBXBuildFile; fileRef = 1F9FA5A71FDBD06D004AA9F3 /* AxisStd-UltraLight.otf */; };
+		1F984A221FFC656600831563 /* bg_touch.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 1F984A211FFC655D00831563 /* bg_touch.mp3 */; };
 		1F9862E71FDE846700F3E1D3 /* LeaderboardVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F9862E61FDE846700F3E1D3 /* LeaderboardVC.swift */; };
 		1F9862EA1FDE88D500F3E1D3 /* LeadboardTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F9862E81FDE88D500F3E1D3 /* LeadboardTableViewCell.swift */; };
 		1F9862EB1FDE88D500F3E1D3 /* LeadboardTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1F9862E91FDE88D500F3E1D3 /* LeadboardTableViewCell.xib */; };
+		1F9CA98C1FFB385400FB21E8 /* bgMusic.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 1F9CA98A1FFB2AEC00FB21E8 /* bgMusic.mp3 */; };
+		1F9CA98D1FFB385400FB21E8 /* bgTouch.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 1F9CA98B1FFB2C6500FB21E8 /* bgTouch.mp3 */; };
 		1F9FA5A91FDBD171004AA9F3 /* NameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F9FA5A81FDBD171004AA9F3 /* NameViewController.swift */; };
 		1FABD7E61FDA8D510003B725 /* HOMEWEBViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FABD7E51FDA8D510003B725 /* HOMEWEBViewController.m */; };
+		1FCABB7A1FFB8B6900E40DB8 /* bgGameOver.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 1FCABB791FFB8B5E00E40DB8 /* bgGameOver.mp3 */; };
 		4025519DB955009B7C85998D /* Pods_SaveTheDot.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 42758C96890679C1513575FC /* Pods_SaveTheDot.framework */; };
 		AEA498FB1D15848400E746AB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEA498FA1D15848400E746AB /* AppDelegate.swift */; };
 		AEA498FD1D15848400E746AB /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEA498FC1D15848400E746AB /* ViewController.swift */; };
@@ -51,16 +55,20 @@
 		1F5B0A1A1FE12ABF00C17DEE /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Localizable.strings; sourceTree = "<group>"; };
 		1F5B0A1B1FE12AC000C17DEE /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/Localizable.strings; sourceTree = "<group>"; };
 		1F5B0A1C1FE12AC100C17DEE /* fi */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fi; path = fi.lproj/Localizable.strings; sourceTree = "<group>"; };
+		1F984A211FFC655D00831563 /* bg_touch.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = bg_touch.mp3; sourceTree = "<group>"; };
 		1F9862E61FDE846700F3E1D3 /* LeaderboardVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeaderboardVC.swift; sourceTree = "<group>"; };
 		1F9862E81FDE88D500F3E1D3 /* LeadboardTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeadboardTableViewCell.swift; sourceTree = "<group>"; };
 		1F9862E91FDE88D500F3E1D3 /* LeadboardTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LeadboardTableViewCell.xib; sourceTree = "<group>"; };
 		1F9862EC1FDE89D200F3E1D3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		1F9CA98A1FFB2AEC00FB21E8 /* bgMusic.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = bgMusic.mp3; sourceTree = "<group>"; };
+		1F9CA98B1FFB2C6500FB21E8 /* bgTouch.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = bgTouch.mp3; sourceTree = "<group>"; };
 		1F9FA5A71FDBD06D004AA9F3 /* AxisStd-UltraLight.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "AxisStd-UltraLight.otf"; sourceTree = "<group>"; };
 		1F9FA5A81FDBD171004AA9F3 /* NameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NameViewController.swift; sourceTree = "<group>"; };
 		1FABD7E01FDA6F330003B725 /* SaveTheDot-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "SaveTheDot-Bridging-Header.h"; sourceTree = "<group>"; };
 		1FABD7E41FDA8D510003B725 /* HOMEWEBViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HOMEWEBViewController.h; sourceTree = "<group>"; };
 		1FABD7E51FDA8D510003B725 /* HOMEWEBViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HOMEWEBViewController.m; sourceTree = "<group>"; };
 		1FABD7E71FDA902A0003B725 /* SaveTheDot.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = SaveTheDot.entitlements; sourceTree = "<group>"; };
+		1FCABB791FFB8B5E00E40DB8 /* bgGameOver.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = bgGameOver.mp3; sourceTree = "<group>"; };
 		42758C96890679C1513575FC /* Pods_SaveTheDot.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SaveTheDot.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		510BC25D1B489FDF21C179A1 /* Pods-SaveTheDot.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SaveTheDot.release.xcconfig"; path = "Pods/Target Support Files/Pods-SaveTheDot/Pods-SaveTheDot.release.xcconfig"; sourceTree = "<group>"; };
 		A2594EC75EF06EB2C0583BCC /* Pods-SaveTheDot.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SaveTheDot.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SaveTheDot/Pods-SaveTheDot.debug.xcconfig"; sourceTree = "<group>"; };
@@ -130,6 +138,10 @@
 				1F9862E61FDE846700F3E1D3 /* LeaderboardVC.swift */,
 				1F9862E81FDE88D500F3E1D3 /* LeadboardTableViewCell.swift */,
 				1F9862E91FDE88D500F3E1D3 /* LeadboardTableViewCell.xib */,
+				1FCABB791FFB8B5E00E40DB8 /* bgGameOver.mp3 */,
+				1F9CA98A1FFB2AEC00FB21E8 /* bgMusic.mp3 */,
+				1F9CA98B1FFB2C6500FB21E8 /* bgTouch.mp3 */,
+				1F984A211FFC655D00831563 /* bg_touch.mp3 */,
 				1F9862EC1FDE89D200F3E1D3 /* Assets.xcassets */,
 				1FABD7E41FDA8D510003B725 /* HOMEWEBViewController.h */,
 				1FABD7E51FDA8D510003B725 /* HOMEWEBViewController.m */,
@@ -178,7 +190,7 @@
 				TargetAttributes = {
 					AEA498F61D15848400E746AB = {
 						CreatedOnToolsVersion = 8.0;
-						DevelopmentTeam = 4T8373K883;
+						DevelopmentTeam = GNW2K9LSCG;
 						DevelopmentTeamName = "Yongjian Lin";
 						LastSwiftMigration = 0900;
 						ProvisioningStyle = Manual;
@@ -219,6 +231,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1F984A221FFC656600831563 /* bg_touch.mp3 in Resources */,
+				1FCABB7A1FFB8B6900E40DB8 /* bgGameOver.mp3 in Resources */,
+				1F9CA98C1FFB385400FB21E8 /* bgMusic.mp3 in Resources */,
+				1F9CA98D1FFB385400FB21E8 /* bgTouch.mp3 in Resources */,
 				1F9663C61FDFCCC000A1DA00 /* AxisStd-UltraLight.otf in Resources */,
 				1F5B0A091FE1295000C17DEE /* InfoPlist.strings in Resources */,
 				1F9663C31FDFC68F00A1DA00 /* Assets.xcassets in Resources */,
@@ -470,13 +486,13 @@
 				CODE_SIGN_ENTITLEMENTS = SaveTheDot/SaveTheDot.entitlements;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Manual;
-				DEVELOPMENT_TEAM = 4T8373K883;
+				DEVELOPMENT_TEAM = GNW2K9LSCG;
 				INFOPLIST_FILE = SaveTheDot/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = www.JY.com.catch;
+				PRODUCT_BUNDLE_IDENTIFIER = www.jon.com.SaveTheEarth;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "3176a21f-7f5a-4aa3-8a00-5f90894251b2";
-				PROVISIONING_PROFILE_SPECIFIER = JYcatchDeve;
+				PROVISIONING_PROFILE = "e9576510-9826-4b9b-bd15-8eba12da5efe";
+				PROVISIONING_PROFILE_SPECIFIER = 1111SaveTheEarthDeve;
 				SWIFT_OBJC_BRIDGING_HEADER = "SaveTheDot/SaveTheDot-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 3.0;
@@ -492,13 +508,13 @@
 				CODE_SIGN_ENTITLEMENTS = SaveTheDot/SaveTheDot.entitlements;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
 				CODE_SIGN_STYLE = Manual;
-				DEVELOPMENT_TEAM = 4T8373K883;
+				DEVELOPMENT_TEAM = GNW2K9LSCG;
 				INFOPLIST_FILE = SaveTheDot/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = www.JY.com.catch;
+				PRODUCT_BUNDLE_IDENTIFIER = www.jon.com.SaveTheEarth;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "6e21dcfc-8f09-4819-b876-1a4587548b91";
-				PROVISIONING_PROFILE_SPECIFIER = JYcatchDistr;
+				PROVISIONING_PROFILE = "71823bee-9b74-4351-b9d1-9586899adaaa";
+				PROVISIONING_PROFILE_SPECIFIER = 1111SaveTheEarthDist;
 				SWIFT_OBJC_BRIDGING_HEADER = "SaveTheDot/SaveTheDot-Bridging-Header.h";
 				SWIFT_VERSION = 3.0;
 			};

@@ -54,7 +54,7 @@ class NameViewController: UIViewController , UITextFieldDelegate{
         
         let textLength = text.characters.count + string.characters.count - range.length
         
-        return textLength<=8
+        return textLength<=12
     }
 
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
